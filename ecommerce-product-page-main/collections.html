@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styleCollections.css" />
+</head>
+<body>
+    <main class="main-container">
+        <header class="header">
+            <!-- menu icon -->
+            <figure class="header_menu-icon" onclick="desplegarMenuBar()">
+                <img src="./images/icon-menu.svg" alt="menu icon">
+            </figure>
+            <!-- logo -->
+            <figure class="header_logo">
+                <img src="./images/logo.svg" alt="logo">
+            </figure>
+            <!-- menu bar -->
+            <nav class="navbar">
+                <ul class="navbar_items">
+                    <li><a class="navbar_link" href="#">Collections</a></li>
+                    <li><a class="navbar_link" href="#">Men</a></li>
+                    <li><a class="navbar_link" href="#">Women</a></li>
+                    <li><a class="navbar_link" href="#">About</a></li>
+                    <li><a class="navbar_link" href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- cambiar class modal-navbar por menu mobile bar -->
+            <div class="modal-navbar_background">
+                <nav class="modal-navbar">
+                    <figure class="modal-navbar_close-icon" onclick="cerrarMenuBar()">
+                        <img src="./images/icon-close.svg" alt="">
+                    </figure>
+                    <ul class="modal-navbar_items">
+                        <li><a class="modal-navbar_link" href="#">Collections</a></li>
+                        <li><a class="modal-navbar_link" href="#">Men</a></li>
+                        <li><a class="modal-navbar_link" href="#">Women</a></li>
+                        <li><a class="modal-navbar_link" href="#">About</a></li>
+                        <li><a class="modal-navbar_link" href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- avatar cart -->
+            <div class="header_cart-avatar">
+                <div class="header_cart">
+                    <div class="header_cart-notification">3</div>
+                    <figure class = "header_cart-icon">
+                        <img src="./images/icon-cart.svg" alt="cart">
+                    </figure>
+                </div>
+                <figure class="header_avatar">
+                    <img src="./images/image-avatar.png" alt="avatar">
+                </figure>
+            </div>
+        </header>
+        <hr class="line">
+        <section>
+            
+        </section>
+    </main>
+    <script src="scriptCollections.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+    "products": [
+        {
+            "name": "Nike Air Force",
+            "company": "Nike",
+            "price": 500000,
+            "description": "Suma puntos con este clásico del baloncesto legendario. Con un diseño que combina la comodidad sobre el parqué con un estilo fuera de la cancha, estas AF1 lucen revestimientos de piel suave y piel en relieve para ofrecer un estilo de baloncesto. Las unidades Air ocultas y la duradera confección de los 80, que rinde homenaje a una era, añaden la comodidad que más te gusta.",
+            "stock": 5,
+            "discount": 50,
+            "genero": "M",
+            "collections":2,
+            "images": {
+                "link1": "./images/zapatato-nike-1.png",
+                "link2": "./images/zapatato-nike-2.png",
+                "link3": "./images/zapatato-nike-3.png",
+                "link4": "./images/zapatato-nike-4.png"
+            }
+        },
+        {
+            "name": "Nike Dunk Low",
+            "company": "Nike",
+            "price": 400000,
+            "description": "El icono del baloncesto de los 80, creado para la cancha y adaptado al estilo urbano, vuelve con revestimientos de brillo perfecto y los colores clásicos del equipo. Con su diseño icónico de baloncesto, las Nike Dunk Low llevan de nuevo el estilo vintage de los 80 a las calles, y su zona del tobillo de perfil bajo y acolchada permite jugar con comodidad donde quieras.",
+            "stock": 5,
+            "discount": 50,
+            "genero": "F",
+            "collections":2,
+            "images": {
+                "link1": "./images/zapatato-nike-2-1.png",
+                "link2": "./images/zapatato-nike-2-2.png",
+                "link3": "./images/zapatato-nike-2-3.png",
+                "link4": "./images/zapatato-nike-2-4.png"
+            }
+        },
+        {
+            "name": "ZAPATOS CASUALES PARA HOMBRE JENKYNS",
+            "company": "Bosi",
+            "price": 300000,
+            "description": "Zapato casual de la marca Bosi fabricado en fino cuero con sutiles costuras y originales detalles. Cierre de cordones que se adapta perfecto a cualquier tipo de empeine. El forro de cuero garantiza la perfecta comodidad de estos innovadores zapatos casuales. Con suela de goma cómoda y flexible que ofrece además muy buena elasticidad, adherencia al suelo y resistencia al desgaste.",
+            "stock": 5,
+            "discount": 30,
+            "genero": "M",
+            "collections":1,
+            "images": {
+                "link1": "./images/zapatato-bosi-2-1.png",
+                "link2": "./images/zapatato-bosi-2-2.png",
+                "link3": "./images/zapatato-bosi-2-3.png",
+                "link4": "./images/zapatato-bosi-2-4.png"
+            }
+        },
+        {
+            "name": "MOCASINES PARA MUJER LERINS",
+            "company": "Bosi",
+            "price": 350000,
+            "description": "Mocasines para dama elaborados 100% en cuero. Este diseño trae una hebilla dorada que aporta estilo y elegancia al calzado. La referencia LERINS tiene una estructura cómoda con punta redonda, plantilla en cuero que contribuye a una mayor sensación de suavidad y comodidad. Este calzado cuenta con una suela plana en material neolite que proporciona flexibilidad al caminar.",
+            "stock": 5,
+            "discount": 25,
+            "genero": "F",
+            "collections":1,
+            "images": {
+                "link1": "./images/zapatato-bosi-1.png",
+                "link2": "./images/zapatato-bosi-2.png",
+                "link3": "./images/zapatato-bosi-3.png",
+                "link4": "./images/zapatato-bosi-4.png"
+            }
+        }
+    ],
+    "collections":[
+        {
+            "id":1,
+            "name":"formal"
+        },
+        {
+            "id":2,
+            "name":"sports"
+        }
+    ],
+    "Clients":[
+    ]
+}
