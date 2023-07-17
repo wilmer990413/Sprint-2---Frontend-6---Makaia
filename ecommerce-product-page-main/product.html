@@ -29,21 +29,6 @@
           <li><a class="navbar_link" href="#">Contact</a></li>
         </ul>
       </nav>
-      <!-- cambiar class modal-navbar por menu mobile bar -->
-      <div class="modal-navbar_background">
-        <nav class="modal-navbar">
-          <figure class="modal-navbar_close-icon" onclick="cerrarMenuBar()">
-            <img src="./images/icon-close.svg" alt="">
-          </figure>
-          <ul class="modal-navbar_items">
-            <li><a class="modal-navbar_link" href="collections.html">Collections</a></li>
-            <li><a class="modal-navbar_link" href="men.html">Men</a></li>
-            <li><a class="modal-navbar_link" href="woman.html">Woman</a></li>
-            <li><a class="modal-navbar_link" href="#">About</a></li>
-            <li><a class="modal-navbar_link" href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
       <!-- avatar cart -->
       <div class="header_cart-avatar">
         <div class="header_cart">
@@ -55,6 +40,26 @@
         <figure class="header_avatar">
           <img src="./images/image-avatar.png" alt="avatar">
         </figure>
+      </div>
+      <!-- cart buys modal -->
+      <div class="cart-modal">
+        <p class="cart-modal_title">Cart</p>
+        <div class="cart-modal_checkout-container">
+          <div class="cart-modal_details-container">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="product 1">
+            <div>
+              <p class="cart-modal_product">Autumn Limited Edition...</p>
+              <p class="cart-modal_price">
+                $125.00 x 5 
+                <span>$375.00</span>
+              </p>
+            </div>
+            <img src="./images/icon-delete.svg" alt="delete">
+          </div>
+          <button class="cart-modal_checkout">
+            Checkout
+          </button>
+        </div>
       </div>
     </header>
     <hr class="line">
@@ -111,26 +116,6 @@
         </div>
       </article>
     </section>
-    <!-- cart buys modal -->
-    <div class="cart-modal">
-      <p class="cart-modal_title">Cart</p>
-      <div class="cart-modal_checkout-container">
-        <div class="cart-modal_details-container">
-          <img src="./images/image-product-1-thumbnail.jpg" alt="product 1">
-          <div>
-            <p class="cart-modal_product">Autumn Limited Edition...</p>
-            <p class="cart-modal_price">
-              $125.00 x 5 
-              <span>$375.00</span>
-            </p>
-          </div>
-          <img src="./images/icon-delete.svg" alt="delete">
-        </div>
-        <button class="cart-modal_checkout">
-          Checkout
-        </button>
-      </div>
-    </div>
     <!-- gallery modal -->
     <div class="modal-gallery_background">
       <article class="modal-gallery">
@@ -164,6 +149,21 @@
       </article>
     </div>
   </main>
+  <!-- menu bar mobile vertical -->
+  <div class="modal-navbar_background">
+    <nav class="modal-navbar">
+      <figure class="modal-navbar_close-icon" onclick="cerrarMenuBar()">
+        <img src="./images/icon-close.svg" alt="">
+      </figure>
+      <ul class="modal-navbar_items">
+        <li><a class="modal-navbar_link" href="collections.html">Collections</a></li>
+        <li><a class="modal-navbar_link" href="men.html">Men</a></li>
+        <li><a class="modal-navbar_link" href="woman.html">Woman</a></li>
+        <li><a class="modal-navbar_link" href="#">About</a></li>
+        <li><a class="modal-navbar_link" href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
   <script src="script.js"></script>
   <script src="scriptProduct.js" type="module"></script>
 </body>
