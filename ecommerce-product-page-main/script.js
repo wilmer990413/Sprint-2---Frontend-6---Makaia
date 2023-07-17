@@ -25,7 +25,13 @@ asignarFuncion = () => {
     }
 }
 
+document.querySelector(".header_logo").addEventListener('click', function(){redirectionButton('index.html')});
+
 asignarFuncion();
+
+function redirectionButton(ruta){
+    window.location.href = ruta;
+}
 
 window.addEventListener('resize', function() {
     asignarFuncion();

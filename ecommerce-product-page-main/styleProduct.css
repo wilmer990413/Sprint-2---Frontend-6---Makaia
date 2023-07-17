@@ -60,8 +60,13 @@ body {
     margin: 0;
 }
 
-.header_cart:hover{
+.header_cart:hover, .header_logo:hover, .header_avatar:hover{
     cursor: pointer;
+}
+
+.header_avatar > img:hover {
+    border: 2px solid hsl(26, 100%, 55%);
+    border-radius: 50%;
 }
 
 .header_cart-icon{

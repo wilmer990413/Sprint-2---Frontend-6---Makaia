@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | E-commerce product page</title>
   <link rel="stylesheet" href="styleProduct.css" />
-  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="styleHome.css" />
   <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -17,20 +17,19 @@
         <img src="./images/icon-menu.svg" alt="menu icon">
       </figure>
       <!-- logo -->
-      <figure class="header_logo">
+      <figure class="header_logo" onclick="">
         <img src="./images/logo.svg" alt="logo">
       </figure>
       <!-- menu bar -->
       <nav class="navbar">
         <ul class="navbar_items">
-          <li><a class="navbar_link" href="#">Collections</a></li>
-          <li><a class="navbar_link" href="#">Men</a></li>
-          <li><a class="navbar_link" href="#">Women</a></li>
-          <li><a class="navbar_link" href="#">About</a></li>
-          <li><a class="navbar_link" href="#">Contact</a></li>
+            <li><a class="navbar_link" href="collections.html">Collections</a></li>
+            <li><a class="navbar_link" href="men.html">Men</a></li>
+            <li><a class="navbar_link" href="woman.html">Woman</a></li>
+            <li><a class="navbar_link" href="#">About</a></li>
+            <li><a class="navbar_link" href="#">Contact</a></li>
         </ul>
       </nav>
-      
       <!-- avatar cart -->
       <div class="header_cart-avatar">
         <div class="header_cart">
@@ -45,153 +44,99 @@
       </div>
     </header>
     <hr class="line">
-
     <section class="todosec">
-
-    <div class="slide-text">
-      <div class="coutry">
-          <ul>
-              <li>Descuentos cada semana</li>
-              <li>Envios gratuitos</li>
-              <li>Compras innovadoras</li>
-          </ul>
+      <div class="slide-text">
+        <div class="coutry">
+            <ul>
+                <li>Descuentos cada semana</li>
+                <li>Envios gratuitos</li>
+                <li>Compras innovadoras</li>
+            </ul>
+        </div>
       </div>
-    </div>
-
-
-    <div class="content">
-      <figure class="fig">
-        <img src="images/112.jpg" alt="">
-      </figure>
-      <div class="texto-superpuesto">20% DE DESCUENTO EN PRODUCTOS SELECCIONADOS</div>
-    </div>
-    <div class="textos">
-      <p>¡Bienvenido a un mundo de zapatos que te hacen destacar!</p>
-      <h3>PASOS CON ESTILO Y COMODIDAD</h3>
-      <p>Camina con confianza y elegancia, sin comprometer tu estilo</p>
-    </div>
-    <div>
-    <div class="content-video">
-      <video autoplay muted loop>
-        <source src="images/nike.mp4" type="video/mp4">
-        Tu navegador no admite el elemento video.
-      </video>
-    </div>
-    <div class="div-pro">
-    <h3>PRODUCTOS</h3>
-    </div>
-    <div class="carousel-container">
-      <div class="carousel">
-        <img src="images/zapatato-nike-1.png" alt="">
-        <img src="images/zapatato-nike-2-1.png" alt="">
-        <img src="images/zapatato-nike-2.png" alt="">
-        <img src="images/zapatato-nike-1.png" alt="">
-        <img src="images/zapatato-nike-2-1.png" alt="">
-        <img src="images/zapatato-nike-2.png" alt="">
+      <div class="content">
+        <figure class="fig">
+          <img src="images/112.jpg" alt="">
+        </figure>
+        <div class="texto-superpuesto">
+          20% DE DESCUENTO EN PRODUCTOS SELECCIONADOS
+        </div>
       </div>
-      <div class="prev">&#10094;</div>
-      <div class="next">&#10095;</div>
-    </div>
-    </section>
-    
-    
-    <!-- cart buys modal -->
-    <div class="cart-modal">
-      <p class="cart-modal_title">Cart</p>
-      <div class="cart-modal_checkout-container">
-        <div class="cart-modal_details-container">
-          <img src="./images/image-product-1-thumbnail.jpg" alt="product 1">
-          <div>
-            <p class="cart-modal_product">Autumn Limited Edition...</p>
-            <p class="cart-modal_price">
-              $125.00 x 5 
-              <span>$375.00</span>
-            </p>
+      <div class="textos">
+        <p>¡Bienvenido a un mundo de zapatos que te hacen destacar!</p>
+        <h3>PASOS CON ESTILO Y COMODIDAD</h3>
+        <p>Camina con confianza y elegancia, sin comprometer tu estilo</p>
+      </div>
+      <div class="container_video_productos">
+        <div class="content-video">
+          <video autoplay muted loop>
+            <source src="images/nike.mp4" type="video/mp4">
+            Tu navegador no admite el elemento video.
+          </video>
+        </div>
+        <div class="container_titulo_productos">
+          <div class="div-pro">
+            <h3>PRODUCTOS</h3>
           </div>
-          <img src="./images/icon-delete.svg" alt="delete">
-        </div>
-        <button class="cart-modal_checkout">
-          Checkout
-        </button>
-      </div>
-    </div>
-    <!-- gallery modal -->
-    <div class="modal-gallery_background">
-      <article class="modal-gallery">
-        <div class="modal-gallery_container-close">
-          <img class="modal-gallery_close" onclick="cerrarModalGallery()" src="./images/icon-close.svg" alt="icon close">
-        </div>
-        <div class="modal-gallery_image-container">
-          <figure class="modal-gallery_previous">
-            <img src="./images/icon-previous.svg" alt="previous">
-          </figure>
-          <figure class="modal-gallery_next">
-            <img src="./images/icon-next.svg" alt="next">
-          </figure>
-        </div>
-        <div class="modal-gallery_images">
-          <div class="modal-gallery_thumbnails">
-            <figure class="modal-gallery_thumbnail">
-              <img id="mg1" src="./images/image-product-1-thumbnail.jpg"   alt="thumbnail 1">
-            </figure>
-            <figure class="modal-gallery_thumbnail">
-              <img id="mg2" src="./images/image-product-2-thumbnail.jpg"   alt="thumbnail 2">
-            </figure>
-            <figure class="modal-gallery_thumbnail">
-              <img id="mg3" src="./images/image-product-3-thumbnail.jpg"   alt="thumbnail 3">
-            </figure>
-            <figure class="modal-gallery_thumbnail">
-              <img id="mg4" src="./images/image-product-4-thumbnail.jpg"   alt="thumbnail 4">
-            </figure>
-          </div>
-        </div>
-      </article>
-    </div>
-  </main>
-
-<footer class="pie-pagina">
-    <div class="grupo-1">
-        <div class="box">
-            <figure>
-                <a href="#">
-                    <img src="images/logo1.png" alt="Logo de SLee Dw">
-                </a>
-            </figure>
-        </div>
-        <div class="box">
-            <h2>SOBRE NOSOTROS</h2>
-            <p>Encuentra tu estilo perfecto con nuestra amplia selección de zapatillas sneakers y zapatos formales</p>
-            <p>Camina con confianza y comodidad en cada paso. ¡Explora ahora y descubre el calzado ideal para ti!</p>
-        </div>
-        <div class="box">
-            <h2>SIGUENOS</h2>
-            <div class="red-social">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-instagram"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-youtube"></a>
+          <div class="carousel-container">
+            <div class="carousel">
+              <img src="images/zapatato-nike-1.png" alt="">
+              <img src="images/zapatato-nike-2-1.png" alt="">
+              <img src="images/zapatato-nike-2.png" alt="">
+              <img src="images/zapatato-nike-1.png" alt="">
+              <img src="images/zapatato-nike-2-1.png" alt="">
+              <img src="images/zapatato-nike-2.png" alt="">
             </div>
+            <div class="prev">&#10094;</div>
+            <div class="next">&#10095;</div>
+          </div>
         </div>
+      </div>
+    </section>
+  </main>
+  <footer class="pie-pagina">
+    <div class="grupo-1">
+      <div class="box">
+        <figure>
+          <a href="#">
+            <img src="images/logo1.png" alt="Logo de SLee Dw">
+          </a>
+        </figure>
+      </div>
+      <div class="box">
+        <h2>SOBRE NOSOTROS</h2>
+        <p>Encuentra tu estilo perfecto con nuestra amplia selección de zapatillas sneakers y zapatos formales</p>
+        <p>Camina con confianza y comodidad en cada paso. ¡Explora ahora y descubre el calzado ideal para ti!</p>
+      </div>
+      <div class="box">
+        <h2>SIGUENOS</h2>
+        <div class="red-social">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-youtube"></a>
+        </div>
+      </div>
     </div>
     <div class="grupo-2">
-        <small>&copy; 2023  <b>Makaia </b> - Todos los Derechos Reservados.</small>
+      <small>&copy; 2023  <b>Makaia </b> - Todos los Derechos Reservados.</small>
     </div>
-</footer>
-    <!-- cambiar class modal-navbar por menu mobile bar -->
-    <div class="modal-navbar_background">
-        <nav class="modal-navbar">
-          <figure class="modal-navbar_close-icon" onclick="cerrarMenuBar()">
-            <img src="./images/icon-close.svg" alt="">
-          </figure>
-          <ul class="modal-navbar_items">
-            <li><a class="modal-navbar_link" href="#">Collections</a></li>
-            <li><a class="modal-navbar_link" href="#">Men</a></li>
-            <li><a class="modal-navbar_link" href="#">Women</a></li>
-            <li><a class="modal-navbar_link" href="#">About</a></li>
-            <li><a class="modal-navbar_link" href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+  </footer>
+  <!-- cambiar class modal-navbar por menu mobile bar -->
+  <div class="modal-navbar_background">
+    <nav class="modal-navbar">
+      <figure class="modal-navbar_close-icon" onclick="cerrarMenuBar()">
+        <img src="./images/icon-close.svg" alt="">
+      </figure>
+      <ul class="modal-navbar_items">
+        <li><a class="modal-navbar_link" href="#">Collections</a></li>
+        <li><a class="modal-navbar_link" href="#">Men</a></li>
+        <li><a class="modal-navbar_link" href="#">Women</a></li>
+        <li><a class="modal-navbar_link" href="#">About</a></li>
+        <li><a class="modal-navbar_link" href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
   <script src="script.js"></script>
   <script src="script-carrusel.js"></script>
 </body>
