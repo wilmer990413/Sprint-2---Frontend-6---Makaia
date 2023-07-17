@@ -15,11 +15,13 @@ cerrarModalGallery= ()=>{
 }
 
 asignarFuncion = () => {
-    if (window.innerWidth > 900) {
-        document.querySelector('.gallery_image-container').onclick = desplegarModalGallery;
-    } else {
-        document.querySelector('.gallery_image-container').onclick = function() {};
-        document.querySelector('.modal-gallery_background').style.display = 'none';
+    if(document.querySelector('.gallery_image-container')!== null){
+        if (window.innerWidth > 900) {
+            document.querySelector('.gallery_image-container').onclick = desplegarModalGallery;
+        } else {
+            document.querySelector('.gallery_image-container').onclick = function() {};
+            document.querySelector('.modal-gallery_background').style.display = 'none';
+        }
     }
 }
 

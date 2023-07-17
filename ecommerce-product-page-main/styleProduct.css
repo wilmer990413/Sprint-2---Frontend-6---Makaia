@@ -56,6 +56,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* original sin esto */
+    justify-content: center;
     margin: 0;
 }
 
@@ -69,7 +71,8 @@ body {
 }
 
 .header_cart-notification{
-    display: flex;
+    /* tiene que ser flex */
+    display: none;
     align-items: center;
     position: relative;
     top: 15%;
@@ -107,7 +110,6 @@ body {
     top: 0;
     left: 0;
 }
-
 .modal-navbar{
     width: 70%;
     height: 100%;
@@ -474,7 +476,6 @@ body {
     }
     .gallery_thumbnail > img:hover{
         border: 2px solid hsl(26, 100%, 55%);
-        filter: hue-rotate(25deg) saturate(100%) brightness(94%);
     }
     .gallery_thumbnail > img{
         width: 100%;

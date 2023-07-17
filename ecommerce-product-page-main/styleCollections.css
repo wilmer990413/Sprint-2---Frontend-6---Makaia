@@ -1,0 +1,44 @@
+
+.collections_title{
+    padding-left: 5%;
+}
+
+.label-collection{
+    text-align: center;
+    padding: 5%;
+    background-color: hsl(220, 14%, 75%);
+    border: 2px solid hsl(219, 9%, 45%);
+    margin: 2%;
+    border-radius: 10px;
+    width: 80%;
+    height: 10%;
+    font-size: 120%;  
+    font-weight: 900;
+}
+
+.label-collection:hover{
+    border: 2px solid  hsl(26, 100%, 55%);
+    background-color: hsl(25, 100%, 94%);
+}
+
+.collections_container{
+    width: 100%;
+}
+
+.collections_container-label-collections{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+@media (min-width: 700px)  {
+    .collections_title{
+        font-size: 180%;
+    }
+    .label-collection{
+        font-size: 140%;
+        width: 10%;
+    }
+}

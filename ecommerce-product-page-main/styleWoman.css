@@ -1,0 +1,48 @@
+.woman_container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.woman_product_container{
+    text-align: center;
+    width: 35%;
+    margin: 2%;
+    padding: 1%;
+}
+
+.woman_product_container:hover{
+    cursor: pointer;
+    border-radius: 25px;
+    border: 2px solid  hsl(26, 100%, 55%);
+    background-color: hsl(25, 100%, 94%);
+}
+
+.woman_product{
+    width: 100%;
+    margin: 0;
+}
+.woman_product > img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.details_company {
+    font-size: 100%;
+}
+
+.details_title {
+    font-size: 100%;
+}
+
+.woman_title{
+    font-size: 250%;
+    margin-left: 10%;
+}
+
+@media (min-width: 700px)  {
+    .woman_product_container{
+        width: 20%;
+    }
+}

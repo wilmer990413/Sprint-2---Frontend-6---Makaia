@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | E-commerce product page</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styleProduct.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <main class="main-container">
@@ -21,9 +22,9 @@
       <!-- menu bar -->
       <nav class="navbar">
         <ul class="navbar_items">
-          <li><a class="navbar_link" href="#">Collections</a></li>
-          <li><a class="navbar_link" href="#">Men</a></li>
-          <li><a class="navbar_link" href="#">Women</a></li>
+          <li><a class="navbar_link" href="collections.html">Collections</a></li>
+          <li><a class="navbar_link" href="men.html">Men</a></li>
+          <li><a class="navbar_link" href="woman.html">Woman</a></li>
           <li><a class="navbar_link" href="#">About</a></li>
           <li><a class="navbar_link" href="#">Contact</a></li>
         </ul>
@@ -35,9 +36,9 @@
             <img src="./images/icon-close.svg" alt="">
           </figure>
           <ul class="modal-navbar_items">
-            <li><a class="modal-navbar_link" href="#">Collections</a></li>
-            <li><a class="modal-navbar_link" href="#">Men</a></li>
-            <li><a class="modal-navbar_link" href="#">Women</a></li>
+            <li><a class="modal-navbar_link" href="collections.html">Collections</a></li>
+            <li><a class="modal-navbar_link" href="men.html">Men</a></li>
+            <li><a class="modal-navbar_link" href="woman.html">Woman</a></li>
             <li><a class="modal-navbar_link" href="#">About</a></li>
             <li><a class="modal-navbar_link" href="#">Contact</a></li>
           </ul>
@@ -136,7 +137,7 @@
         <div class="modal-gallery_container-close">
           <img class="modal-gallery_close" onclick="cerrarModalGallery()" src="./images/icon-close.svg" alt="icon close">
         </div>
-        <div class="modal-gallery_image-container">
+        <div id="imgP" class="modal-gallery_image-container">
           <figure class="modal-gallery_previous">
             <img src="./images/icon-previous.svg" alt="previous">
           </figure>
@@ -164,5 +165,6 @@
     </div>
   </main>
   <script src="script.js"></script>
+  <script src="scriptProduct.js" type="module"></script>
 </body>
 </html>
