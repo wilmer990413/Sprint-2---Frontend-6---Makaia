@@ -32,6 +32,9 @@
     justify-content: center;
 }
 
+.cart-modal{
+    top: 20%;
+}
 
 @media (min-width: 700px)  {
     .collections_title{
@@ -40,5 +43,8 @@
     .label-collection{
         font-size: 140%;
         width: 10%;
+    }
+    .cart-modal{
+        top: 25%;
     }
 }

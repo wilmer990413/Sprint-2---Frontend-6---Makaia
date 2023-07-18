@@ -20,7 +20,7 @@ async function printCollections(){
                 <p class="details_company">${item.company}</p>
                 <p class="details_title">${item.name}</p>
             </div>
-            `
+            `;
         });
         let productHTML = document.querySelectorAll('.collection_product_container');
         agregarEventos(productHTML);
@@ -42,6 +42,6 @@ function agregarEventos(elementosHTML){
 }
 
 function redirectionButton(selection){
-    localStorage.setItem('selectionProducto',JSON.stringify(selection));
+    localStorage.setItem('selectionProduct',JSON.stringify(selection));
     window.location.href = 'product.html';
 }

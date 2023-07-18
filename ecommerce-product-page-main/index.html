@@ -13,7 +13,7 @@
   <main class="main-container">
     <header class="header">
       <!-- menu icon -->
-      <figure class="header_menu-icon" onclick="desplegarMenuBar()">
+      <figure class="header_menu-icon">
         <img src="./images/icon-menu.svg" alt="menu icon">
       </figure>
       <!-- logo -->
@@ -93,6 +93,16 @@
         </div>
       </div>
     </section>
+    <!-- cart buys modal -->
+    <div class="cart-modal">
+      <p class="cart-modal_title">Cart</p>
+      <div class="cart-modal_checkout-container">
+          <p class="cart_empty">Your cart is empty</p>
+      </div>
+      <button class="cart-modal_checkout">
+          Checkout
+      </button>
+    </div>
   </main>
   <footer class="pie-pagina">
     <div class="grupo-1">
@@ -125,7 +135,7 @@
   <!-- cambiar class modal-navbar por menu mobile bar -->
   <div class="modal-navbar_background">
     <nav class="modal-navbar">
-      <figure class="modal-navbar_close-icon" onclick="cerrarMenuBar()">
+      <figure class="modal-navbar_close-icon">
         <img src="./images/icon-close.svg" alt="">
       </figure>
       <ul class="modal-navbar_items">
@@ -137,7 +147,7 @@
       </ul>
     </nav>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
   <script src="script-carrusel.js"></script>
 </body>
 </html>

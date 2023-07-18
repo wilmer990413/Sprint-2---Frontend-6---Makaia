@@ -76,7 +76,7 @@ body {
 
 .header_cart-notification{
     /* tiene que ser flex */
-    display: flex;
+    display: none;
     align-items: center;
     position: relative;
     top: 15%;
@@ -279,18 +279,81 @@ body {
 }
 
 .cart-modal{
-    display: flex;
+    display: none;
     position: absolute;
     flex-direction: column;
     align-items: center;
-    top: 10%;
+    top: 8%;
     width: 90%;
     background-color: hsl(0, 0%, 100%);
     border-radius: 20px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
+
 .cart-modal_title{
-    border-bottom: 1px solid ;
+    margin: 0;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    font-weight: 900;
+    width: 95%;
+    border-bottom: 1px solid hsl(220, 14%, 75%);
+}
+
+.cart-modal_checkout-container{
+    text-align: center;
+    width: 90%;
+}
+
+.cart-modal_details-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.image_product{
+    width: 20%;
+    border-radius: 10px;
+}
+
+.description_product_container{
+    width: 50%;
+}
+
+.cart-modal_product{
+    color: hsl(219, 9%, 45%);
+}
+
+.cart_empty{
+    font-weight: 900;
+    color: hsl(219, 9%, 45%);
+}
+
+.cart-modal_price{
+    color: hsl(219, 9%, 45%);
+}
+
+.cart-modal_price > span{
+    font-weight: 900;
+    color: hsl(220, 13%, 13%);
+}
+
+.delete-botton-cart:hover{
+    cursor: pointer;
+}
+
+.cart-modal_checkout {
+    cursor: pointer;
+    width: 90%;
+    padding: 5%;
+    border-radius: 10px;
+    border-color: transparent;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(26, 100%, 55%);
 }
 
 /* desktop */
@@ -348,6 +411,9 @@ body {
         background-color: hsl(0, 0%, 100%);
         border-radius: 50%;
     }
+    .cart-modal{
+        top: 9%;
+    }
 }
 
 @media (min-width: 700px)  {
@@ -381,6 +447,11 @@ body {
     }
     .header_cart-avatar{
         width: 14%;
+    }
+    .cart-modal{
+        top: 11%;
+        width: 40%;
+        left: 57%;
     }
 }
 
@@ -543,5 +614,10 @@ body {
     .modal-gallery_image-container{
         height: 70%;
         margin-bottom: 5%;
+    }
+    .cart-modal{
+        top: 12%;
+        width: 25%;
+        left: 70%;
     }
 }

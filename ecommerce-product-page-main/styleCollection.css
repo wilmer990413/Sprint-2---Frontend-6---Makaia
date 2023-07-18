@@ -41,6 +41,10 @@
     margin-left: 10%;
 }
 
+.cart-modal{
+    top: 15%;
+}
+
 @media (min-width: 700px)  {
     .collection_product_container{
         width: 20%;

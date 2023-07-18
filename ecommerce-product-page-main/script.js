@@ -1,38 +1,80 @@
-desplegarMenuBar = ()=>{
-    document.querySelector('.modal-navbar_background').style.display = 'block';
-}
+import {printProductInCart} from './scriptAux.js';
 
-cerrarMenuBar = ()=>{
-    document.querySelector('.modal-navbar_background').style.display = 'none';
-}
+document.querySelector(".header_logo").addEventListener('click', function(){redirectionButton('index.html')});
 
-desplegarModalGallery= ()=>{
-    document.querySelector('.modal-gallery_background').style.display = 'flex';
-}
+document.querySelector(".header_cart").addEventListener('click', openOrCloseCart);
 
-cerrarModalGallery= ()=>{ 
-    document.querySelector('.modal-gallery_background').style.display = 'none';
-}
+document.querySelector('.header_menu-icon').addEventListener('click',openMenuBar);
 
-asignarFuncion = () => {
+document.querySelector('.modal-navbar_close-icon').addEventListener('click',closeMenuBar);
+
+window.addEventListener('resize', closeModalGalleryByResize);
+
+function closeModalGalleryByResize(){
     if(document.querySelector('.gallery_image-container')!== null){
-        if (window.innerWidth > 900) {
-            document.querySelector('.gallery_image-container').onclick = desplegarModalGallery;
-        } else {
-            document.querySelector('.gallery_image-container').onclick = function() {};
+        if (!window.innerWidth > 900) {
             document.querySelector('.modal-gallery_background').style.display = 'none';
         }
     }
 }
 
-document.querySelector(".header_logo").addEventListener('click', function(){redirectionButton('index.html')});
+function openMenuBar (){
+    document.querySelector('.modal-navbar_background').style.display = 'block';
+}
 
-asignarFuncion();
+function openOrCloseCart(){
+    if(!document.querySelector('.cart-modal').style.display || document.querySelector('.cart-modal').style.display == 'none'){
+        document.querySelector('.cart-modal').style.display = 'flex';
+    }else{
+        document.querySelector('.cart-modal').style.display = 'none';
+    }
+}
+
+function closeMenuBar (){
+    if (window.innerWidth < 900) {
+        console.log("entro");
+        document.querySelector('.modal-navbar_background').style.display = 'none';
+    }
+}
 
 function redirectionButton(ruta){
     window.location.href = ruta;
 }
 
-window.addEventListener('resize', function() {
-    asignarFuncion();
-});
+function printCartProducts () {
+    if(JSON.parse(localStorage.getItem('cartProduct')) && JSON.parse(localStorage.getItem('cartProduct')).length > 0){
+        console.log("",JSON.parse(localStorage.getItem('cartProduct')));
+        let cartProducts = JSON.parse(localStorage.getItem('cartProduct'));
+        document.querySelector('.header_cart-notification').style.display = 'flex';
+        document.querySelector('.header_cart-notification').textContent = JSON.parse(localStorage.getItem('cartProduct')).length;
+        if(document.querySelector('.cart_empty') !== null){
+            document.querySelector('.cart_empty').remove();
+            cartProducts.forEach((element,index) => {
+                printProductInCart(
+                    index,
+                    element.name,
+                    element.image,
+                    element.price,
+                    element.quantity,
+                    document.querySelector('.cart-modal_checkout-container')
+                );
+            });
+            const cartProductHTML = document.querySelectorAll('.cart-modal_details-container');
+            cartProductHTML.forEach((element,index)=>{
+                element.querySelector('.delete-botton-cart').addEventListener('click',function () {deleteProductCart(index,cartProducts)});
+            });
+        }
+    }
+}
+
+function deleteProductCart(index){
+    let cartProduct = JSON.parse(localStorage.getItem('cartProduct'));
+    cartProduct.splice(index,1);
+    document.getElementById(index+1+'cp').remove();
+    document.querySelector('.header_cart-notification').textContent = cartProduct.length;
+    localStorage.setItem('cartProduct',JSON.stringify(cartProduct));
+}
+
+printCartProducts();
+
+export {deleteProductCart};

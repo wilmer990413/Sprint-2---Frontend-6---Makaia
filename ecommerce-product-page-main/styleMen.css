@@ -41,6 +41,10 @@
     margin-left: 10%;
 }
 
+.cart-modal{
+    top: 18%;
+}
+
 @media (min-width: 700px)  {
     .men_product_container{
         width: 20%;

@@ -6,7 +6,7 @@ async function printCollections(){
     try {
         const data = await listCollections();
         data.forEach(item => {
-        collectionsHTML.innerHTML += `<label id = "l${item.id}" class="label-collection">${item.name}</label>`;
+            collectionsHTML.innerHTML += `<label id = "l${item.id}" class="label-collection">${item.name}</label>`;
         });
         let collectionHTML = document.querySelectorAll('.label-collection');
         agregarEventos(collectionHTML);

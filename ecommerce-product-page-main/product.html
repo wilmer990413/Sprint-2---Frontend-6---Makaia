@@ -12,7 +12,7 @@
   <main class="main-container">
     <header class="header">
       <!-- menu icon -->
-      <figure class="header_menu-icon" onclick="desplegarMenuBar()">
+      <figure class="header_menu-icon">
         <img src="./images/icon-menu.svg" alt="menu icon">
       </figure>
       <!-- logo -->
@@ -45,27 +45,17 @@
       <div class="cart-modal">
         <p class="cart-modal_title">Cart</p>
         <div class="cart-modal_checkout-container">
-          <div class="cart-modal_details-container">
-            <img src="./images/image-product-1-thumbnail.jpg" alt="product 1">
-            <div>
-              <p class="cart-modal_product">Autumn Limited Edition...</p>
-              <p class="cart-modal_price">
-                $125.00 x 5 
-                <span>$375.00</span>
-              </p>
-            </div>
-            <img src="./images/icon-delete.svg" alt="delete">
-          </div>
-          <button class="cart-modal_checkout">
-            Checkout
-          </button>
+          <p class="cart_empty">Your cart is empty</p>
         </div>
+        <button class="cart-modal_checkout">
+          Checkout
+        </button>
       </div>
     </header>
     <hr class="line">
     <section class="content">
       <article class="gallery">
-        <div id="id_gallery" class="gallery_image-container" onclick="">
+        <div id="id_gallery" class="gallery_image-container">
           <figure class="gallery_previous">
             <img src="./images/icon-previous.svg" alt="previous">
           </figure>
@@ -120,7 +110,7 @@
     <div class="modal-gallery_background">
       <article class="modal-gallery">
         <div class="modal-gallery_container-close">
-          <img class="modal-gallery_close" onclick="cerrarModalGallery()" src="./images/icon-close.svg" alt="icon close">
+          <img class="modal-gallery_close" src="./images/icon-close.svg" alt="icon close">
         </div>
         <div id="imgP" class="modal-gallery_image-container">
           <figure class="modal-gallery_previous">
@@ -152,8 +142,8 @@
   <!-- menu bar mobile vertical -->
   <div class="modal-navbar_background">
     <nav class="modal-navbar">
-      <figure class="modal-navbar_close-icon" onclick="cerrarMenuBar()">
-        <img src="./images/icon-close.svg" alt="">
+      <figure class="modal-navbar_close-icon">
+        <img src="./images/icon-close.svg" alt="close icon">
       </figure>
       <ul class="modal-navbar_items">
         <li><a class="modal-navbar_link" href="collections.html">Collections</a></li>
@@ -164,7 +154,7 @@
       </ul>
     </nav>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
   <script src="scriptProduct.js" type="module"></script>
 </body>
 </html>
