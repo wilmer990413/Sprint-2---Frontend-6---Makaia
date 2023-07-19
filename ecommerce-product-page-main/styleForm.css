@@ -190,7 +190,25 @@ body {
     display: none;
 }
 
+.cart-modal_checkout-container{
+    width: 100% !important;
+    overflow: auto;
+    max-height: 200px;
+}
 
+.cart-modal_product{
+    width: 50% !important;
+}
+.total-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-container > input {
+    text-align: center;
+    font-weight: 900;
+}
 
 @media screen and (min-width: 800px) {
 
@@ -225,8 +243,8 @@ body {
     .form-wrapper {
         display: flex;
         justify-content: start;
+        margin-top: 10%;
         align-items: center;
-        margin-right: auto;
     }
 
     .form {

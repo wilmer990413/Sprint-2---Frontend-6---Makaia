@@ -15,7 +15,7 @@ const saveInformationClient = async (data) => {
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
             const responseData = await response.json();
-            return responseData;
+            return JSON.stringify(responseData);
         }
     } catch(e) {
         alertHTTPConextion(e);

@@ -3,7 +3,6 @@ import {alertHTTPConextion} from "../sweetalert/alertHTTP.js";
 const listProducts = async () => {
     try {
         const response = await fetch('http://localhost:3000/products');
-        console.log(response);
         if(!response.ok){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{

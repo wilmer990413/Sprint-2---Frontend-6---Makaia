@@ -1,4 +1,5 @@
 import {printProductInCart} from './scriptAux.js';
+import {alertConfirmation,alertNoCheckout} from './sweetalert/alertConfirmation.js';
 
 document.querySelector(".header_logo").addEventListener('click', function(){redirectionButton('index.html')});
 
@@ -9,6 +10,22 @@ document.querySelector('.header_menu-icon').addEventListener('click',openMenuBar
 document.querySelector('.modal-navbar_close-icon').addEventListener('click',closeMenuBar);
 
 window.addEventListener('resize', closeModalGalleryByResize);
+
+document.querySelector('.cart-modal_checkout').addEventListener('click',checkoutCartProduct);
+
+function checkoutCartProduct(){
+    if(JSON.parse(localStorage.getItem('cartProduct')) && JSON.parse(localStorage.getItem('cartProduct')).length > 0){
+        alertConfirmation(
+            function(){
+                redirectionButton('form.html');
+            },
+            function(){
+            }
+        );
+    }else {
+        alertNoCheckout();
+    }
+}
 
 function closeModalGalleryByResize(){
     if(document.querySelector('.gallery_image-container')!== null){
@@ -72,6 +89,9 @@ function deleteProductCart(index){
     cartProduct.splice(index,1);
     document.getElementById(index+1+'cp').remove();
     document.querySelector('.header_cart-notification').textContent = cartProduct.length;
+    if (cartProduct.length === 0){
+        document.querySelector('.cart-modal_checkout-container').innerHTML = '<p class="cart_empty">Your cart is empty</p>';
+    }
     localStorage.setItem('cartProduct',JSON.stringify(cartProduct));
 }
 

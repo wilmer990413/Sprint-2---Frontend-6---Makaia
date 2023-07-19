@@ -2,6 +2,7 @@ import {productByName} from './services/products.js';
 import {alertErrorGeneral} from './sweetalert/alertError.js';
 import {deleteProductCart} from './script.js';
 import {printProductInCart} from './scriptAux.js';
+import {saveInformationClient} from './services/client.js';
 let cartProducts = [];
 
 async function printProduct(){
@@ -14,32 +15,97 @@ async function printProduct(){
         let selection = JSON.parse(localStorage.getItem('selectionProduct'));
         const data = await productByName(selection.name);
         let product = data[0];
-        document.querySelector('.gallery_image-container').style.backgroundImage = `url('${product.images.link1}')`;
-        console.log("pare");
-        document.getElementById("g1").src = product.images.link1;
-        document.getElementById("g2").src = product.images.link2;
-        document.getElementById("g3").src = product.images.link3;
-        document.getElementById("g4").src = product.images.link4;
-        document.querySelector('.details_company').textContent = product.company;
-        document.querySelector('.details_title').textContent = product.name;
-        document.querySelector('.details_description').textContent = product.description;
+        printImagesProducts("g",product);
+        printImagesProducts("mg",product);
         let priceWithDiscount = product.price - (product.price*(product.discount/100));
-        document.querySelector('.details_now').innerHTML = `$${priceWithDiscount}<span class="details_discount">${product.discount}%</span>`;
-        document.querySelector('.details_before').textContent = product.price;
-        //Modal Gallery Image
-        document.getElementById("imgP").style.backgroundImage = `url('${product.images.link1}')`;
-        document.getElementById("mg1").src = product.images.link1;
-        document.getElementById("mg2").src = product.images.link2;
-        document.getElementById("mg3").src = product.images.link3;
-        document.getElementById("mg4").src = product.images.link4;
+        printDetails(product,priceWithDiscount);
         document.querySelector('.input_plus').addEventListener('click', function() {plusOrMinusQuantity("+");});
         document.querySelector('.input_minus').addEventListener('click', function() {plusOrMinusQuantity("-");});
         document.querySelector('.details_button').addEventListener('click',function() {buyProduct(product,priceWithDiscount)});
         document.querySelector('.modal-gallery_close').addEventListener('click', closeModalGallery);
         document.querySelector('.gallery_image-container').addEventListener('click',openModalGallery);
+        document.querySelector('.modal-gallery_next').addEventListener('click',function(){nextOrPlusImageModalGallery(product.images,"+","imgP")});
+        document.querySelector('.modal-gallery_previous').addEventListener('click',function(){nextOrPlusImageModalGallery(product.images,"-","imgP")});
+        document.querySelector('.gallery_next').addEventListener('click',function(){nextOrPlusImageModalGallery(product.images,"+","id_gallery")});
+        document.querySelector('.gallery_previous').addEventListener('click',function(){nextOrPlusImageModalGallery(product.images,"-","id_gallery")});
     } catch (error) {
         alertErrorGeneral(error);
     }
+}
+
+function nextOrPlusImageModalGallery(images,accion,id){
+    let url = document.getElementById(id).style.backgroundImage.replace("url","").replace("(","").replace(")","").replaceAll('"',"");
+    let resultado = images.find((item)=> item.link === url);
+    const position = images.indexOf(resultado);
+    switch (true) {
+        case position === 0 && accion === "+":
+            document.getElementById(id).style.backgroundImage = `url('${images[1].link}')`;
+            break;
+        case position === 1 && accion === "+":
+            document.getElementById(id).style.backgroundImage = `url('${images[2].link}')`;
+            break;
+        case position === 2 && accion === "+":
+            document.getElementById(id).style.backgroundImage = `url('${images[3].link}')`;
+            break;
+        case position === 3 && accion === "+":
+            document.getElementById(id).style.backgroundImage = `url('${images[0].link}')`;
+            break;
+        case position === 0 && accion === "-":
+            document.getElementById(id).style.backgroundImage = `url('${images[3].link}')`;
+            break;
+        case position === 1 && accion === "-":
+            document.getElementById(id).style.backgroundImage = `url('${images[0].link}')`;
+            break;
+        case position === 2 && accion === "-":
+            document.getElementById(id).style.backgroundImage = `url('${images[1].link}')`;
+            break;
+        case position === 3 && accion === "-":
+            document.getElementById(id).style.backgroundImage = `url('${images[2].link}')`;
+            break;
+    }
+}
+
+function openModalGallery(){
+    if (window.innerWidth > 900) {
+        document.querySelector('.modal-gallery_background').style.display = 'flex';
+    }
+}
+
+function closeModalGallery () { 
+    document.querySelector('.modal-gallery_background').style.display = 'none';
+}
+
+function printImagesProducts(prefijo,product){
+    printImagePrincipal(prefijo,product);
+    for (let index = 0; index < 4; index++) {
+        document.getElementById(prefijo+(index+1)).src = product.images[index].link;
+        document.getElementById(prefijo+(index+1)).addEventListener('mouseover', function(){transitionImage(prefijo,(index),product)});
+        document.getElementById(prefijo+(index+1)).addEventListener('mouseout', function(){printImagePrincipal(prefijo,product)});
+    }
+}
+
+function printImagePrincipal(prefijo,product){
+    if (prefijo==="g") {
+        document.querySelector('.gallery_image-container').style.backgroundImage = `url('${product.images[0].link}')`;
+    } else {
+        document.getElementById("imgP").style.backgroundImage = `url('${product.images[0].link}')`;
+    }
+}
+
+function transitionImage(prefijo,index,product){
+    if (prefijo === "g") {
+        document.querySelector('.gallery_image-container').style.backgroundImage = `url('${product.images[index].link}')`;
+    } else {
+        document.getElementById("imgP").style.backgroundImage = `url('${product.images[index].link}')`;
+    }
+}
+
+function printDetails(product,priceWithDiscount){
+    document.querySelector('.details_company').textContent = product.company;
+    document.querySelector('.details_title').textContent = product.name;
+    document.querySelector('.details_description').textContent = product.description;
+    document.querySelector('.details_now').innerHTML = `$${priceWithDiscount}<span class="details_discount">${product.discount}%</span>`;
+    document.querySelector('.details_before').textContent = product.price;
 }
 
 function plusOrMinusQuantity (operacion) {
@@ -54,27 +120,30 @@ function plusOrMinusQuantity (operacion) {
 
 function buyProduct(product,priceWithDiscount){
     if(document.querySelector(".input_number").value > 0){
+        if(JSON.parse(localStorage.getItem('cartProduct'))){
+            cartProducts = JSON.parse(localStorage.getItem('cartProduct'));
+        }
         let auxProduct = {
             name: product.name,
-            image: product.images.link1,
+            image: product.images[0].link,
             price: priceWithDiscount,
             quantity: parseInt(document.querySelector(".input_number").value),
         };
         if(cartProducts.length > 0){
             const resultado = cartProducts.find((item)=> item.name === product.name);
             if (resultado) {
-                const posicion = cartProducts.indexOf(resultado);
-                cartProducts[posicion].quantity += parseInt(document.querySelector(".input_number").value);
-                document.getElementById((posicion+1)+"cp").querySelector(".description_product_container .cart-modal_price").innerHTML = '';
-                document.getElementById((posicion+1)+"cp").querySelector(".description_product_container .cart-modal_price").innerHTML = `$${cartProducts[posicion].price} x ${cartProducts[posicion].quantity} 
-                <span>$${parseInt(cartProducts[posicion].price)*parseInt(cartProducts[posicion].quantity)}</span>`;
+                const position = cartProducts.indexOf(resultado);
+                cartProducts[position].quantity += parseInt(document.querySelector(".input_number").value);
+                document.getElementById((position+1)+"cp").querySelector(".description_product_container .cart-modal_price").innerHTML = '';
+                document.getElementById((position+1)+"cp").querySelector(".description_product_container .cart-modal_price").innerHTML = `$${cartProducts[position].price} x ${cartProducts[position].quantity} 
+                <span>$${parseInt(cartProducts[position].price)*parseInt(cartProducts[position].quantity)}</span>`;
+                localStorage.setItem('cartProduct',JSON.stringify(cartProducts));
             }else {
                 addProductToCart(auxProduct);
             }
         }else{
             addProductToCart(auxProduct);
         }
-        
     }
 }
 
@@ -112,19 +181,12 @@ function addProductToCart(product){
             cartProducts[cartProducts.length-1].quantity,
             document.querySelector('.cart-modal_checkout-container')
         );
-        document.getElementById((cartProducts.length-1)+"cp").querySelector(".delete-botton-cart").addEventListener('click',function(){
+        document.getElementById((cartProducts.length)+"cp").querySelector(".delete-botton-cart").addEventListener('click',function(){
             deleteProductCart(cartProducts.length-1);
         });
     }
     localStorage.setItem('cartProduct',JSON.stringify(cartProducts));
-}
-
-function openModalGallery(){
-    document.querySelector('.modal-gallery_background').style.display = 'flex';
-}
-
-function closeModalGallery () { 
-    document.querySelector('.modal-gallery_background').style.display = 'none';
+    cartProducts = JSON.parse(localStorage.getItem('cartProduct'));
 }
 
 printProduct();

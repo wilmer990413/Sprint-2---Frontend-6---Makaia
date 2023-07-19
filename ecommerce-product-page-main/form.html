@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <title>Frontend Mentor | Interactive card details form</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="styleForm.css">
   <link rel="stylesheet" href="styleProduct.css">
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-  
   <main class="wrapper">
     <div class="card">
       <div class="card-front">
@@ -35,12 +34,28 @@
         </div>
       </div>
     </div>
-
     <div class="form-wrapper">
       <form class="form" id="form">
         <div class="form-group">
           <label for="input-name" class="label">Cardholder Name</label>
           <input type="text" class="input" id="input-name" placeholder="e.g. Jane Appleseed" required>
+        </div>
+        <div class="form-group">
+          <label for="input-id" class="label">ID</label>
+          <input type="text" class="input" id="input-id" maxlength="10" placeholder="e.g. 1234567890" required>
+        </div>
+        <div class="form-group">
+          <label for="input-email" class="label">Email</label>
+          <input type="email" class="input" id="input-email" placeholder="e.g. jane@gmail.com" required>
+        </div>
+        <div class="form-group">
+          <label for="cart" class="label">Cart</label>
+        </div>
+        <div class="cart-modal_checkout-container">
+        </div>
+        <div class="total-container">
+          <label for="total" class="label">Total:</label>
+          <input type="text" class="input" id="total"  disabled>
         </div>
         <div class="form-group">
           <label for="input-number" class="label">Card Number</label>
@@ -60,22 +75,12 @@
           </div>
         </div>
         <div class="form-group">
-          <button class="button" type="submit">Confirm</button>
+          <button class="button" type="submit" id="confirm">Continue</button>
         </div>
       </form>
-      
-      <div class="thank-you disabled" id="thank-you">
-        <img src="./images/icon-complete.svg" alt="Ícono de completado">
-        <p class="thank-you-title">Thank you!</p>
-        <p class="thank-you-text">We've added your card details</p>
-        <button class="button" id="continue">Continue</button>
-      </div>
     </div>
-
   </main>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.0.2/cleave.min.js" integrity="sha512-SvgzybymTn9KvnNGu0HxXiGoNeOi0TTK7viiG0EGn2Qbeu/NFi3JdWrJs2JHiGA1Lph+dxiDv5F9gDlcgBzjfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="main.js" type="module"></script>
-  <!-- <script src="client.js"></script> -->
+  <script src="scriptForm.js" type="module"></script>
 </body>
 </html>

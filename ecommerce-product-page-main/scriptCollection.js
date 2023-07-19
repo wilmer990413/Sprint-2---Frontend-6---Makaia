@@ -15,7 +15,7 @@ async function printCollections(){
             collectionsHTML.innerHTML += `
             <div class="collection_product_container">
                 <figure class = "collection_product">
-                    <img src="${item.images.link1}" alt="product">
+                    <img src="${item.images[0].link}" alt="product">
                 </figure>
                 <p class="details_company">${item.company}</p>
                 <p class="details_title">${item.name}</p>
