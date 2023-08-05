@@ -1,12 +1,13 @@
 import {alertHTTPConextion} from "../sweetalert/alertHTTP.js";
+import axios from 'https://cdn.jsdelivr.net/npm/axios@1.4.0/+esm';
 
 const listProducts = async () => {
     try {
-        const response = await fetch('http://localhost:3000/products');
-        if(!response.ok){
+        const response = await axios.get('http://localhost:3000/products');
+        if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
-            const listProductsData = await response.json();
+            const listProductsData = response.data;
             return listProductsData;
         }
     } catch(e) {
@@ -16,11 +17,11 @@ const listProducts = async () => {
 
 const productByName = async (name) => {
     try {
-        const response = await fetch('http://localhost:3000/products?name='+name);
-        if(!response.ok){
+        const response = await axios.get('http://localhost:3000/products?name='+name);
+        if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
-            const productByNameData = await response.json();
+            const productByNameData = response.data;
             return productByNameData;
         }
     } catch(e) {
@@ -30,11 +31,11 @@ const productByName = async (name) => {
 
 const listProductsByGenre = async (genre) => {
     try {
-        const response = await fetch('http://localhost:3000/products?genre='+genre);
-        if(!response.ok){
+        const response = await axios.get('http://localhost:3000/products?genre='+genre);
+        if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
-            const listProductsByGenreData = await response.json();
+            const listProductsByGenreData = response.data;
             return listProductsByGenreData;
         }
     } catch(e) {

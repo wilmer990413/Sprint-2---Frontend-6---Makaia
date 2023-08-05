@@ -110,18 +110,18 @@
   "clients": [
     {
       "dni": "1121962850",
-      "name": "Wilmer Rodolfo Castro Ladino",
-      "email": "wilmer1499cala@gmail.com",
-      "cardNumber": "1245 63987 412569",
+      "name": "Doris ",
+      "email": "doris@doris.com",
+      "cardNumber": "1316 54644 797131",
       "month": "12",
-      "year": "54",
-      "cvc": "465",
-      "totalBuy": 1250000,
+      "year": "12",
+      "cvc": "123",
+      "totalBuy": 600000,
       "products": [
         {
-          "name": "Nike Air Force",
-          "price": 250000,
-          "quantity": 5
+          "name": "Nike Dunk Low",
+          "price": 200000,
+          "quantity": 3
         }
       ],
       "id": 1

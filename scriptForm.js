@@ -1,5 +1,5 @@
 import {saveInformationClient} from "./services/client.js"
-import {printProductInCheckout} from './scriptAux.js'
+import {printProductInCheckout} from './scriptPrintHTML.js'
 import {alertConfirmationBuy} from './sweetalert/alertConfirmation.js'
 let total = 0;
 let cartProducts = [];
@@ -85,7 +85,6 @@ form.addEventListener('submit',async (e) =>{
         await alertConfirmationBuy(
             async function(){
                 let respon = await saveInformationClient(data);
-                console.log(respon);
                 localStorage.clear();
                 window.location.href = 'index.html';
             },
@@ -118,7 +117,7 @@ function printProducts(){
         return auxProduct; 
     });
     document.getElementById("total").value = total;
-}
+    }
 }
 
 

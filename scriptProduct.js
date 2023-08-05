@@ -1,8 +1,7 @@
 import {productByName} from './services/products.js';
 import {alertErrorGeneral} from './sweetalert/alertError.js';
 import {deleteProductCart} from './script.js';
-import {printProductInCart} from './scriptAux.js';
-import {saveInformationClient} from './services/client.js';
+import {printProductInCart} from './scriptPrintHTML.js';
 let cartProducts = [];
 
 async function printProduct(){

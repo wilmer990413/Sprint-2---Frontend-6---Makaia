@@ -1,4 +1,4 @@
-import {printProductInCart} from './scriptAux.js';
+import {printProductInCart} from './scriptPrintHTML.js';
 import {alertConfirmation,alertNoCheckout} from './sweetalert/alertConfirmation.js';
 
 document.querySelector(".header_logo").addEventListener('click', function(){redirectionButton('index.html')});

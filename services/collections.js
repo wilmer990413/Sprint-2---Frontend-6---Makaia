@@ -1,12 +1,13 @@
 import {alertHTTPConextion} from "../sweetalert/alertHTTP.js";
+import axios from 'https://cdn.jsdelivr.net/npm/axios@1.4.0/+esm';
 
 const listCollections = async () => {
     try {
-        const response = await fetch('http://localhost:3000/collections');
-        if(!response.ok){
+        const response = await axios.get('http://localhost:3000/collections');
+        if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
-            const collectionsData = await response.json();
+            const collectionsData = response.data;
             return collectionsData;
         }
     } catch(e) {
@@ -15,11 +16,11 @@ const listCollections = async () => {
 }
 const collectionsById = async (id) =>{
     try {
-        const response = await fetch('http://localhost:3000/collections/'+id);
-        if(!response.ok){
+        const response = await axios.get('http://localhost:3000/collections/'+id);
+        if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
-            const collectionsByIdData = await response.json();
+            const collectionsByIdData = response.data;
             return collectionsByIdData;
         }
     } catch(e) {
