@@ -16,8 +16,12 @@ async function printProduct(){
         let product = data[0];
         printImagesProducts("g",product);
         printImagesProducts("mg",product);
-        let priceWithDiscount = product.price - (product.price*(product.discount/100));
-        printDetails(product,priceWithDiscount);
+        if(product.discount > 0){
+            let priceWithDiscount = product.price - (product.price*(product.discount/100));
+            printDetails(product,priceWithDiscount);
+        }else{
+
+        }
         document.querySelector('.input_plus').addEventListener('click', function() {plusOrMinusQuantity("+");});
         document.querySelector('.input_minus').addEventListener('click', function() {plusOrMinusQuantity("-");});
         document.querySelector('.details_button').addEventListener('click',function() {buyProduct(product,priceWithDiscount)});
@@ -103,8 +107,8 @@ function printDetails(product,priceWithDiscount){
     document.querySelector('.details_company').textContent = product.company;
     document.querySelector('.details_title').textContent = product.name;
     document.querySelector('.details_description').textContent = product.description;
-    document.querySelector('.details_now').innerHTML = `$${priceWithDiscount}<span class="details_discount">${product.discount}%</span>`;
-    document.querySelector('.details_before').textContent = product.price;
+    document.querySelector('.details_now').innerHTML = product.discount > 0 ? `$${priceWithDiscount}<span class="details_discount">${product.discount}%</span>`: `$${product.price}`;
+    document.querySelector('.details_before').textContent = product.discount > 0 ? product.price : '';
 }
 
 function plusOrMinusQuantity (operacion) {

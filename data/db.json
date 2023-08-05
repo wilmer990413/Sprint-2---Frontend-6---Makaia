@@ -22,7 +22,8 @@
         {
           "link": "/images/zapatato-nike-4.png"
         }
-      ]
+      ],
+      "id": 1
     },
     {
       "name": "Nike Dunk Low",
@@ -46,7 +47,8 @@
         {
           "link": "/images/zapatato-nike-2-4.png"
         }
-      ]
+      ],
+      "id": 2
     },
     {
       "name": "Zapatos Casuales Para Hombree Jenkyns",
@@ -70,7 +72,8 @@
         {
           "link": "/images/zapatato-bosi-2-4.png"
         }
-      ]
+      ],
+      "id": 3
     },
     {
       "name": "Mocasines para Mujer Lerins",
@@ -94,7 +97,8 @@
         {
           "link": "/images/zapatato-bosi-4.png"
         }
-      ]
+      ],
+      "id": 4
     }
   ],
   "collections": [
