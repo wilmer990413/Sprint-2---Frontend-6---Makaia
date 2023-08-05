@@ -86,7 +86,7 @@ form.addEventListener('submit',async (e) =>{
             async function(){
                 let respon = await saveInformationClient(data);
                 localStorage.clear();
-                window.location.href = 'index.html';
+                window.location.href = '../index.html';
             },
             async function(){}
         );
