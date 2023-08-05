@@ -20,7 +20,7 @@ body {
 }
 
 .wrapper {
-    background-image: url("images/bg-main-mobile.png");
+    background-image: url("/images/bg-main-mobile.png");
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100%;

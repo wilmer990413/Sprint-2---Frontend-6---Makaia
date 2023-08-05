@@ -9,7 +9,7 @@ function printProductInCart(index, name, image, price, quantity, containerCart){
                 <span>$${parseInt(price)*parseInt(quantity)}</span>
             </p>
         </div>
-        <img class="delete-botton-cart" src="./images/icon-delete.svg" alt="delete">
+        <img class="delete-botton-cart" src="/images/icon-delete.svg" alt="delete">
     </div>
     `;
 }

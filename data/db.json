@@ -11,16 +11,16 @@
       "collections": 2,
       "images": [
         {
-          "link": "./images/zapatato-nike-1.png"
+          "link": "/images/zapatato-nike-1.png"
         },
         {
-          "link": "./images/zapatato-nike-2.png"
+          "link": "/images/zapatato-nike-2.png"
         },
         {
-          "link": "./images/zapatato-nike-3.png"
+          "link": "/images/zapatato-nike-3.png"
         },
         {
-          "link": "./images/zapatato-nike-4.png"
+          "link": "/images/zapatato-nike-4.png"
         }
       ]
     },
@@ -35,16 +35,16 @@
       "collections": 2,
       "images": [
         {
-          "link": "./images/zapatato-nike-2-1.png"
+          "link": "/images/zapatato-nike-2-1.png"
         },
         {
-          "link": "./images/zapatato-nike-2-2.png"
+          "link": "/images/zapatato-nike-2-2.png"
         },
         {
-          "link": "./images/zapatato-nike-2-3.png"
+          "link": "/images/zapatato-nike-2-3.png"
         },
         {
-          "link": "./images/zapatato-nike-2-4.png"
+          "link": "/images/zapatato-nike-2-4.png"
         }
       ]
     },
@@ -59,16 +59,16 @@
       "collections": 1,
       "images": [
         {
-          "link": "./images/zapatato-bosi-2-1.png"
+          "link": "/images/zapatato-bosi-2-1.png"
         },
         {
-          "link": "./images/zapatato-bosi-2-2.png"
+          "link": "/images/zapatato-bosi-2-2.png"
         },
         {
-          "link": "./images/zapatato-bosi-2-3.png"
+          "link": "/images/zapatato-bosi-2-3.png"
         },
         {
-          "link": "./images/zapatato-bosi-2-4.png"
+          "link": "/images/zapatato-bosi-2-4.png"
         }
       ]
     },
@@ -83,16 +83,16 @@
       "collections": 1,
       "images": [
         {
-          "link": "./images/zapatato-bosi-1.png"
+          "link": "/images/zapatato-bosi-1.png"
         },
         {
-          "link": "./images/zapatato-bosi-2.png"
+          "link": "/images/zapatato-bosi-2.png"
         },
         {
-          "link": "./images/zapatato-bosi-3.png"
+          "link": "/images/zapatato-bosi-3.png"
         },
         {
-          "link": "./images/zapatato-bosi-4.png"
+          "link": "/images/zapatato-bosi-4.png"
         }
       ]
     }

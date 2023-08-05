@@ -1,7 +1,7 @@
 import {printProductInCart} from './scriptPrintHTML.js';
-import {alertConfirmation,alertNoCheckout} from './sweetalert/alertConfirmation.js';
+import {alertConfirmation,alertNoCheckout} from '../sweetalert/alertConfirmation.js';
 
-document.querySelector(".header_logo").addEventListener('click', function(){redirectionButton('index.html')});
+document.querySelector(".header_logo").addEventListener('click', function(){redirectionButton('../index.html')});
 
 document.querySelector(".header_cart").addEventListener('click', openOrCloseCart);
 
@@ -17,7 +17,7 @@ function checkoutCartProduct(){
     if(JSON.parse(localStorage.getItem('cartProduct')) && JSON.parse(localStorage.getItem('cartProduct')).length > 0){
         alertConfirmation(
             function(){
-                redirectionButton('form.html');
+                redirectionButton('/pages/form.html');
             },
             function(){
             }
@@ -49,7 +49,6 @@ function openOrCloseCart(){
 
 function closeMenuBar (){
     if (window.innerWidth < 900) {
-        console.log("entro");
         document.querySelector('.modal-navbar_background').style.display = 'none';
     }
 }

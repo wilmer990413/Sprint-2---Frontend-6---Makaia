@@ -1,6 +1,6 @@
-import {listProducts} from './services/products.js';
-import {collectionsById} from './services/collections.js';
-import {alertErrorGeneral} from './sweetalert/alertError.js';
+import {listProducts} from '../services/products.js';
+import {collectionsById} from '../services/collections.js';
+import {alertErrorGeneral} from '../sweetalert/alertError.js';
 const collectionsHTML = document.querySelector('.collection_container');
 const titleCollection = document.querySelector('.collections_title');
 

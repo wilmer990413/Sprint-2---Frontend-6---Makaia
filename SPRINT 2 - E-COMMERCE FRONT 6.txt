@@ -7,3 +7,16 @@ SPRINT 2 - E-COMMERCE FRONT 6:
 - implementación del carrito de compras
 - implementación de la galeria
 - implementacion del responsive
+
+--Conversion del Proyecto del Marketplace a Modularización:
+El participante deberá identificar las funcionalidades principales del proyecto del marketplace y dividirlas en módulos coherentes y reutilizables.
+Deberá organizar adecuadamente la estructura del proyecto, asegurándose de que los módulos sean independientes y puedan comunicarse de manera eficiente.
+Se evaluará la capacidad del participante para explicar y justificar las decisiones de diseño tomadas durante el proceso de modularización.
+--Uso de Axios para las Solicitudes HTTP:
+El participante deberá integrar la biblioteca Axios para manejar las solicitudes HTTP en el proyecto.
+Se evaluará la implementación de peticiones HTTP correctamente manejadas, con gestión de errores y manejo adecuado de respuestas.
+Será importante que el participante demuestre comprensión del flujo de trabajo asíncrono y cómo Axios simplifica el manejo de solicitudes y respuestas.
+--Panel de Administración de Productos:
+El participante deberá diseñar e implementar un Crud que permita agregar, editar y eliminar productos del marketplace.
+Se evaluará la funcionalidad del panel, asegurándose de que todas las acciones sean realizadas correctamente y sin errores.
+También será importante la facilidad de uso y la estética del panel de administración.

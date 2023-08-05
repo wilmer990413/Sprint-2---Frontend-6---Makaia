@@ -1,5 +1,5 @@
-import {listCollections} from './services/collections.js';
-import {alertErrorGeneral} from './sweetalert/alertError.js';
+import {listCollections} from '../services/collections.js';
+import {alertErrorGeneral} from '../sweetalert/alertError.js';
 const collectionsHTML = document.querySelector('.collections_container-label-collections');
 
 async function printCollections(){

@@ -1,5 +1,5 @@
-import {listProductsByGenre} from './services/products.js';
-import {alertErrorGeneral} from './sweetalert/alertError.js';
+import {listProductsByGenre} from '../services/products.js';
+import {alertErrorGeneral} from '../sweetalert/alertError.js';
 const womanHTML = document.querySelector('.woman_container');
 
 async function printProduct(){
