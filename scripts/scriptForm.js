@@ -1,4 +1,4 @@
-import {saveInformationClient} from "../services/client.js"
+import {saveInformationOrder} from "../services/orders.js"
 import {printProductInCheckout} from './scriptPrintHTML.js'
 import {alertConfirmationBuy} from '../sweetalert/alertConfirmation.js'
 let total = 0;
@@ -84,7 +84,7 @@ form.addEventListener('submit',async (e) =>{
         }
         await alertConfirmationBuy(
             async function(){
-                let respon = await saveInformationClient(data);
+                let respon = await saveInformationOrder(data);
                 localStorage.clear();
                 window.location.href = '../index.html';
             },

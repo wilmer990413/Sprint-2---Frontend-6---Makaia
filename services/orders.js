@@ -1,9 +1,9 @@
 import {alertHTTPConextion} from "../sweetalert/alertHTTP.js";
 import axios from 'https://cdn.jsdelivr.net/npm/axios@1.4.0/+esm';
 
-const saveInformationClient = async (data) => {
+export const saveInformationOrder = async (data) => {
     try {
-        const response = await axios.post('http://localhost:3000/clients', data, {
+        const response = await axios.post('http://localhost:3000/orders', data, {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -17,5 +17,3 @@ const saveInformationClient = async (data) => {
         alertHTTPConextion(e);
     }
 }
-
-export {saveInformationClient};
